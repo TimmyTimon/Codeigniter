@@ -1,5 +1,5 @@
 <?php
-class Assign extends CI_Controller{
+class Work extends CI_Controller{
 public function display(){
     $data['title']="States in America";
     $data['heading']="The Different American States";
@@ -20,8 +20,8 @@ $data['content2']="<h2>The western states include:</H2>"
 <li>Oklahoma</li>
 <li>Kansas</li>
 Can you name the other western states?";
-$this->load->model('assigndb');
+$this->load->model('workdb');
 $data['query']="The states you have selected are:<br/>";
-$this->load->view('assignview',$data); 
+$this->load->view('workview',$data); 
 }
 }

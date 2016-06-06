@@ -1,5 +1,5 @@
 <?php
-class Assigndb extends CI_Model{
+class Workdb extends CI_Model{
 
     private $input;
     private $db;
