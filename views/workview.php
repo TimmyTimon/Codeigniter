@@ -1,31 +1,48 @@
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <title><?php echo $title?></title>
     <style>
         body{background-color:grey;}
-        form{background-color:purple;}
         h1{position:relative; color:blue;}
         </style>
 </head>
-<body>
+
         <h1><?php echo $heading?></h1>
         <p> <?php  echo $content ?></p>
-        <form>
-           State: <input id="mystates" type="text" name="states">
-           State: <input id="mystates1" type="text" name="states1">
-           State: <input id="mystates2" type="text" name="states2">
-           State: <input id="mystates3" type="text" name="states3">
-           <input type="submit" value="submit">
+        <form class="form-inline">
+            <div class="form-group">
+           State: <input id="mystates" type="text"  placeholder="Eastern State">
+            </div>
+            <div class="form-group">
+           State: <input id="mystates1" type="text" placeholder="Eastern State">
+            </div>
+            <div class="form-group">
+           State: <input id="mystates2" type="text" placeholder="Eastern State">
+                </div>
+            <div class="form-group">
+           State: <input id="mystates3" type="text" placeholder="Eastern State">
+            </div>
+           <button type="submit" class="btn btn-danger">Submit</button>
         </form>
-        <p> <?php echo$content2?></p>
-        <form>
-           State: <input id="mystatez" type="text" name="statez">
-           State: <input id="mystatez1" type="text" name="statez1">
-           State: <input id="mystatez2" type="text" name="statez2">
-           State: <input id="mystatez3" type="text" name="statez3">
-           <input type="submit" value="submit">
+        <p > <?php echo$content2?></p>
+        <form class="form inline">
+             <div class="form-group">
+           State: <input id="mystatez" type="text" placeholder="Western State">
+            </div>
+            <div class="form-group">
+           State: <input id="mystatez1" type="text" placeholder="Western State">
+            </div>
+            <div class="form-group">
+           State: <input id="mystatez2" type="text" placeholder="Western State">
+                </div>
+            <div class="form-group">
+           State: <input id="mystatez3" type="text" placeholder="Western State">
+            </div>
+            <button type="submit" class="btn btn-danger">Submit</button>
         </form>
-        <table>
+        <table class="table tabl-stripped">
 <th>State</th><br/>
 <th>State</th><br/>
 <th>State</th><br/>
@@ -52,7 +69,7 @@ if(!empty($showData)){
 </tr>
 <?php }} ?>
         </table>
-</body>
+
 </html>
 
 
