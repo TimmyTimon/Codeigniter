@@ -6,9 +6,10 @@
     <style>
         body{background-color:grey;}
         h1{position:relative; color:blue;}
+        .colorpar{background-color:purple;}
         </style>
 </head>
-
+<body>
         <h1><?php echo $heading?></h1>
         <p> <?php  echo $content ?></p>
         <form class="form-inline">
@@ -69,7 +70,21 @@ if(!empty($showData)){
 </tr>
 <?php }} ?>
         </table>
-
+        <script src="//code.jquery.com/jquery-3.0.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("p").hover(
+                function(){
+                $(this).addClass("colorpar");
+                },
+                function(){
+                 $(this).removeClass("colorpar");
+             }
+                );
+       
+            });
+        </script>
+</body>
 </html>
 
 
