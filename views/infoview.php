@@ -18,8 +18,8 @@
     </head>
     <body>
         <div id="container">
-            <div id="header">
-        <h1 class="text-center bg"> The United States!</h1>
+            <div id="header" class="jumbotron">
+                <h1 class="text-center bg"> The United States!</h1>
             </div>
             <img src="<?php echo base_url();?>images/state2.jpg" alt=""/>
                <div id="maincontainer">
@@ -60,10 +60,9 @@
             <div class="form-group">
                 <label for="stateinfo" class="col-sm-2 control-label"> State</label>
                 <div class="col-sm-10">
-            <input type="text"  id="state" placeholder="State" name="state" onkeyup="showHint(state)">
+            <input type="text"  id="state" placeholder="State" name="state">
             </div>
             </div>
-            <p>Suggestions: <span id="txthint"></span></p>
             <br>
             <div class="form-group">
                 <label for="gfanme" class="col-sm-2 control-label"> Governor First name </label>
@@ -92,7 +91,7 @@
         <div class="row">
   <div class="col-xs-6 col-md-3">
     <a href="#" class="thumbnail">
-      <img src="images/state2.jpg" alt="" width='600' height='450'>
+      <img src="images/state2.jpg" alt="" width='180' height='250'>
     </a>
   </div>
   ...
@@ -139,22 +138,23 @@
             </div>
         </div>
         </div>
+           <script src="//code.jquery.com/jquery-3.0.0.min.js"></script>
            <script>
-            function showHint(state){
-                if(state.lenght==0){
-                    document.getElementById(txthint).innerHTML="";
-                    return;
-                }
-                else{
-                    var xhttp=new XMLHttpRequest();
-                    xhttp.onreadystatechange=function(){
-                        if(xhhtp.readyState==4 && xhttp.status==200){
-                            document.getElementById("txthint").innerHTML=xhttp.responseText;
-                        }
-                    }
-                    xhttp.open("GET","myphpscript.php?q=" + state, true);
-                    xhttp.send();
-                }
-            }
-            </scrpit>  
+             $(document).ready(function(){
+                 $("state").keyup(function(){
+                     var search=(this).val();
+                     var datastring=search;
+                     if(search!==''){
+                         $.ajax({
+                             type:"POST",
+                             url:"dbscript.php",
+                             data:datastring,
+                             success:function(html)
+                         });
+                     }
+                     return false;
+                 });
+                 
+                     });
+                     </script>
     </body>
